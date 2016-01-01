@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--From View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FromViewController" customModule="SegueInitiator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kie-eR-efm">
+                                <rect key="frame" x="268" y="285" width="65" height="30"/>
+                                <state key="normal" title="To Segue"/>
+                                <connections>
+                                    <action selector="executeToSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xy7-d0-I7a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4E-80-emd">
+                                <rect key="frame" x="249" y="323" width="103" height="30"/>
+                                <state key="normal" title="Another Segue"/>
+                                <connections>
+                                    <segue destination="J6I-fR-EIl" kind="show" identifier="AnotherSegue" id="cBS-Q8-ycK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b4E-80-emd" firstAttribute="top" secondItem="Kie-eR-efm" secondAttribute="bottom" constant="8" id="W2X-pQ-3v9"/>
+                            <constraint firstItem="Kie-eR-efm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hb3-5B-HgV"/>
+                            <constraint firstItem="b4E-80-emd" firstAttribute="centerX" secondItem="Kie-eR-efm" secondAttribute="centerX" id="uaF-Sa-JKk"/>
+                            <constraint firstItem="Kie-eR-efm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wIj-ai-OaA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="J6I-fR-EIl" kind="show" identifier="ToSegue" id="M4A-8d-LUF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--To View Controller-->
+        <scene sceneID="nVz-b9-ugu">
+            <objects>
+                <viewController id="J6I-fR-EIl" customClass="ToViewController" customModule="SegueInitiator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="api-tL-LDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="9t7-tB-f76"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MpO-TR-qwS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbP-fs-3EP">
+                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HbP-fs-3EP" firstAttribute="centerX" secondItem="MpO-TR-qwS" secondAttribute="centerX" id="bG8-ZN-TaD"/>
+                            <constraint firstItem="HbP-fs-3EP" firstAttribute="centerY" secondItem="MpO-TR-qwS" secondAttribute="centerY" id="mj1-cO-ngS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="HbP-fs-3EP" id="CMd-Gn-VWZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5L-dA-VCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="289"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cBS-Q8-ycK"/>
+    </inferredMetricsTieBreakers>
+</document>
