@@ -31,11 +31,20 @@
                                     <segue destination="J6I-fR-EIl" kind="show" identifier="AnotherSegue" id="cBS-Q8-ycK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m70-5b-Ebs">
+                                <rect key="frame" x="228" y="361" width="145" height="30"/>
+                                <state key="normal" title="Navigation Controller"/>
+                                <connections>
+                                    <segue destination="0pJ-Id-0fE" kind="show" identifier="NavigationController" id="fbo-jW-IEd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="b4E-80-emd" firstAttribute="top" secondItem="Kie-eR-efm" secondAttribute="bottom" constant="8" id="W2X-pQ-3v9"/>
                             <constraint firstItem="Kie-eR-efm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hb3-5B-HgV"/>
+                            <constraint firstItem="m70-5b-Ebs" firstAttribute="centerX" secondItem="b4E-80-emd" secondAttribute="centerX" id="i32-Vv-Rnx"/>
+                            <constraint firstItem="m70-5b-Ebs" firstAttribute="top" secondItem="b4E-80-emd" secondAttribute="bottom" constant="8" id="tfB-Mf-vGw"/>
                             <constraint firstItem="b4E-80-emd" firstAttribute="centerX" secondItem="Kie-eR-efm" secondAttribute="centerX" id="uaF-Sa-JKk"/>
                             <constraint firstItem="Kie-eR-efm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wIj-ai-OaA"/>
                         </constraints>
@@ -46,6 +55,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dFH-gn-xBa">
+            <objects>
+                <navigationController id="0pJ-Id-0fE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="76B-oj-Vvo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="J6I-fR-EIl" kind="relationship" relationship="rootViewController" id="LNM-Jn-b48"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U8n-DN-tfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="1041"/>
         </scene>
         <!--To View Controller-->
         <scene sceneID="nVz-b9-ugu">
@@ -72,6 +97,7 @@
                             <constraint firstItem="HbP-fs-3EP" firstAttribute="centerY" secondItem="MpO-TR-qwS" secondAttribute="centerY" id="mj1-cO-ngS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="JIp-hn-0wR"/>
                     <connections>
                         <outlet property="titleLabel" destination="HbP-fs-3EP" id="CMd-Gn-VWZ"/>
                     </connections>
@@ -82,6 +108,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cBS-Q8-ycK"/>
+        <segue reference="LNM-Jn-b48"/>
     </inferredMetricsTieBreakers>
 </document>

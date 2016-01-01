@@ -64,3 +64,18 @@ class AnotherSegue: TypedSegueInitiator {
         destination.entry = entry
     }
 }
+
+class NavigationSegue: TypedSegueInitiator {
+    let entry: Entry
+
+    init(entry: Entry) {
+        self.entry = entry
+    }
+
+    static let identifier: String? = "NavigationController"
+    typealias Source = UIViewController
+    typealias Destination = ToViewController
+    func prepareWithSource(source: Source, destination: Destination) {
+        destination.entry = entry
+    }
+}

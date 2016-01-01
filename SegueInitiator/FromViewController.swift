@@ -34,6 +34,8 @@ class FromViewController: UIViewController {
             initiator.prepare(segue)
         } else if AnotherSegue.match(segue) {
             AnotherSegue(entry: Entry(title: "Another Segue")).prepare(segue)
+        } else if NavigationSegueInitiator<NavigationSegue>.match(segue) {
+            NavigationSegueInitiator(NavigationSegue(entry: Entry(title: "Navigation Segue"))).prepare(segue)
         } else {
             fatalError()
         }

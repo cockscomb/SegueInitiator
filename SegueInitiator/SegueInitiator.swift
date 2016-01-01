@@ -62,3 +62,33 @@ extension TypedSegueInitiator {
         }
     }
 }
+
+class NavigationSegueInitiator<Root: TypedSegueInitiator>: TypedSegueInitiator {
+    typealias Source = Root.Source
+    typealias Destination = UINavigationController
+    static var identifier: String? {
+        return Root.identifier
+    }
+    static func match(segue: UIStoryboardSegue) -> Bool {
+        guard identifier == segue.identifier &&
+            segue.sourceViewController is Source else {
+                return false
+        }
+        guard let navigationController = segue.destinationViewController as? Destination
+            where navigationController.topViewController is Root.Destination else {
+                return false
+        }
+        return true
+    }
+    let root: Root
+    init(_ root: Root) {
+        self.root = root
+    }
+    func prepareWithSource(source: Source, destination: Destination) {
+        if let itemViewController = destination.topViewController as? Root.Destination {
+            root.prepareWithSource(source, destination: itemViewController)
+        } else {
+            fatalError()
+        }
+    }
+}
