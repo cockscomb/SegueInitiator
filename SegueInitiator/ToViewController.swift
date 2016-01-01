@@ -42,7 +42,7 @@ class ToSegue: TypedSegueInitiator {
         self.entry = entry
     }
 
-    static let identifier = "ToSegue"
+    static let identifier: String? = "ToSegue"
     typealias Source = UIViewController
     typealias Destination = ToViewController
     func prepareWithSource(source: Source, destination: Destination) {
@@ -57,7 +57,7 @@ class AnotherSegue: TypedSegueInitiator {
         self.entry = entry
     }
 
-    static let identifier = "AnotherSegue"
+    static let identifier: String? = "AnotherSegue"
     typealias Source = UIViewController
     typealias Destination = ToViewController
     func prepareWithSource(source: Source, destination: Destination) {

@@ -24,7 +24,7 @@
 import UIKit
 
 protocol SegueInitiator: class {
-    static var identifier: String { get }
+    static var identifier: String? { get }
     func prepare(segue: UIStoryboardSegue)
 }
 
@@ -33,7 +33,11 @@ extension SegueInitiator {
         return identifier == segue.identifier
     }
     func performFrom(viewController: UIViewController) {
-        viewController.performSegueWithIdentifier(Self.identifier, sender: self)
+        if let identifier = Self.identifier {
+            viewController.performSegueWithIdentifier(identifier, sender: self)
+        } else {
+            fatalError("can't perform nil identifier segue")
+        }
     }
 }
 
